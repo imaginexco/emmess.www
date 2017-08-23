@@ -32,7 +32,26 @@ Vagrant.configure('2') do |config|
   config.ssh.shell = %{bash -c 'BASH_ENV=/etc/profile exec bash'}
 
   # Required for NFS to work
+  #config.vm.network :private_network, ip: vconfig.fetch('vagrant_ip'), hostsupdater: 'skip'
+  #config.vm.network :private_network, ip: ip, hostsupdater: 'skip'
+  #config.vm.network :private_network, type: "dhcp"
   config.vm.network :private_network, ip: vconfig.fetch('vagrant_ip'), hostsupdater: 'skip'
+  config.vm.network :forwarded_port, guest: 80,   host:8080
+  config.vm.network :forwarded_port, guest: 443,  host:8443
+  config.vm.network :forwarded_port, guest: 3306, host:3306
+  config.vm.network :forwarded_port, guest: 6379, host:6379
+  config.vm.network :forwarded_port, guest: 3000, host:3000
+  # Redirections on OSX Host machine - requires vagrant plugin trigger
+  if Vagrant.has_plugin?('vagrant-triggers')
+    config.trigger.after :up do
+      run "./bin/portredirect.sh"
+    end
+    config.trigger.after :halt do
+      run "./bin/portredirect_disable.sh"
+    end
+  else
+    fail_with_message "vagrant-triggers missing, please install the plugin with this command:\nvagrant plugin install vagrant-triggers"
+  end
 
   main_hostname, *hostnames = site_hosts.map { |host| host['canonical'] }
   config.vm.hostname = main_hostname

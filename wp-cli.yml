@@ -1,4 +1,11 @@
-path: web/wp
+path: site/web/wp
+
+ssh: ms.imaginex.co/srv/www/ms.imaginex.co/current
+
+disabled_commands:
+  - db drop
+  - db reset
+  - db create
 
 
 @dev:

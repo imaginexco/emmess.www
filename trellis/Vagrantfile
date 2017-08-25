@@ -34,13 +34,10 @@ Vagrant.configure('2') do |config|
   # Required for NFS to work
   #config.vm.network :private_network, ip: vconfig.fetch('vagrant_ip'), hostsupdater: 'skip'
   #config.vm.network :private_network, ip: ip, hostsupdater: 'skip'
-  #config.vm.network :private_network, type: "dhcp"
-  config.vm.network :private_network, ip: vconfig.fetch('vagrant_ip'), hostsupdater: 'skip'
+  #config.vm.network :public_network, hostsupdater: 'skip', bridge: 'en0'
+  config.vm.network :private_network, type: 'dhcp', hostsupdater: 'skip'
   config.vm.network :forwarded_port, guest: 80,   host:8080
   config.vm.network :forwarded_port, guest: 443,  host:8443
-  config.vm.network :forwarded_port, guest: 3306, host:3306
-  config.vm.network :forwarded_port, guest: 6379, host:6379
-  config.vm.network :forwarded_port, guest: 3000, host:3000
   # Redirections on OSX Host machine - requires vagrant plugin trigger
   if Vagrant::Util::Platform.darwin? and Vagrant.has_plugin?('vagrant-triggers')
     config.trigger.after :up do

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-echo "Eliminando redireccionado de puertos 80 y 443"
+echo "Removing redirection for ports 80 and 443."
 sudo pfctl -F all -f /etc/pf.conf
 
 exit 0

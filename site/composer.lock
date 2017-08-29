@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe27f779754104ac806de7083f788ff1",
+    "content-hash": "12f59290ec7a195f96decf1991a519aa",
     "packages": [
         {
             "name": "composer/installers",
@@ -478,26 +478,6 @@
             "homepage": "https://wordpress.org/plugins/bwp-minify/"
         },
         {
-            "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.5.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.5.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.5.5.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
-        },
-        {
             "name": "wpackagist-plugin/customize-inline-editing",
             "version": "0.2.1",
             "source": {
@@ -796,26 +776,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-importer/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-inspect",
-            "version": "1.0.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wp-inspect/",
-                "reference": "tags/1.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-inspect.1.0.0.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-inspect/"
         }
     ],
     "packages-dev": [

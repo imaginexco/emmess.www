@@ -57,7 +57,9 @@
     "wpackagist-plugin/wp-inspect": "^1.0",
     "wpackagist-plugin/customize-object-selector": "^0.4.1",
     "wpackagist-plugin/customize-inline-editing": "^0.2.1",
-    "wpackagist-plugin/stream": "^3.2"
+    "wpackagist-plugin/stream": "^3.2",
+    "wpackagist-plugin/wordpress-importer": "^0.6.3",
+    "wpackagist-plugin/all-in-one-wp-migration": "^6.55"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2"
